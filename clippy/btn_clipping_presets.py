@@ -7,9 +7,10 @@ bpy.utils.register_class(Clippy_Preferences)
 
 def clippy_view_button(self, context):
     layout = self.layout
-    layout.label(text="Clipping Presets", icon='IMAGE_ZDEPTH')
+    box = layout.box()
+    box.label(text="Clipping Presets", icon='IMAGE_ZDEPTH')
 
-    row = layout.row(align=True)
+    row = box.row(align=True)
     if context.area.ui_type == 'VIEW_3D':
         row.prop(context.scene, "clippy_viewport_options", text="")
     elif context.area.ui_type == 'PROPERTIES':

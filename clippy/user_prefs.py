@@ -163,51 +163,61 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         layout = self.layout 
 
         box = layout.box()
-        box.label(text="To update the presets names, restarting Blender is needed.", icon='INFO')
-        box.label(text="The values below are expressed in meters", icon='INFO')
-
+        box.label(text="Notice:", icon='INFO')
+        box.label(text="The values below are expressed in meters.")
+        box.label(text="To update the presets names, you need to restart blender.")
+        
         row = layout.row(align=True)   
         row.label(text="Preset Name")
+        row.scale_x = .5
         row.label(text="Clip Start")
         row.label(text="Clip End")
 
         row = layout.row(align=True)
         row.prop(self, "preset_1_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_1_start_clipping", text="")
         row.prop(self,"preset_1_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_2_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_2_start_clipping", text="")
         row.prop(self,"preset_2_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_3_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_3_start_clipping", text="")
         row.prop(self,"preset_3_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_4_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_4_start_clipping", text="")
         row.prop(self,"preset_4_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_5_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_5_start_clipping", text="")
         row.prop(self,"preset_5_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_6_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_6_start_clipping", text="")
         row.prop(self,"preset_6_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_7_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_7_start_clipping", text="")
         row.prop(self,"preset_7_end_clipping", text="")
 
         row = layout.row(align=True)
         row.prop(self, "preset_8_label", text="")
+        row.scale_x = .5
         row.prop(self,"preset_8_start_clipping", text="")
         row.prop(self,"preset_8_end_clipping", text="")
 
