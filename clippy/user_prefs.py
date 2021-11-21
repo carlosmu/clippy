@@ -10,11 +10,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
     bl_idname = __package__
 
     # Preset 1
-    preset_1_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Viewport Default"
-    )
+    # preset_1_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Viewport Default"
+    # )
     preset_1_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -28,11 +28,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     # Preset 2
-    preset_2_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Camera Default"
-    )
+    # preset_2_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Camera Default"
+    # )
     preset_2_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -46,11 +46,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     # Preset 3
-    preset_3_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Product Design"
-    )
+    # preset_3_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Product Design"
+    # )
     preset_3_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -64,11 +64,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     # Preset 4
-    preset_4_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Landscape"
-    )
+    # preset_4_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Landscape"
+    # )
     preset_4_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -82,11 +82,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     # Preset 5
-    preset_5_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Worlds"
-    )
+    # preset_5_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Worlds"
+    # )
     preset_5_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -100,11 +100,11 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     # Preset 6
-    preset_6_label : bpy.props.StringProperty(
-        name = "Preset name",
-        description = "Name for this preset",
-        default = "Custom"
-    )
+    # preset_6_label : bpy.props.StringProperty(
+    #     name = "Preset name",
+    #     description = "Name for this preset",
+    #     default = "Custom"
+    # )
     preset_6_start_clipping : bpy.props.FloatProperty(
         name = "Clip Start",
         description = "Start clipping for this preset",
@@ -117,58 +117,48 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         default = 5000.0,
         precision = 3
     )
-
-    # # Dropdown Menu
-    # clippy_presets : bpy.props.EnumProperty(
-    #     name = "Clip presets",
-    #     description = "Presets for clipping",
-    #     items = [
-    #         ('PRESET_1', 'Linear', ''),
-    #         ('PRESET_2', 'Cardinal', ''),
-    #         ('PRESET_3', 'Catmull-Rom', ''),
-    #         ('PRESET_4', 'BSpline', ''),
-    #         ('PRESET_5', 'BSpline', ''),
-    #         ('PRESET_6', 'BSpline', '')],
-    #     default = 'PRESET_1'
-    # )
-    
     
     def draw(self, context):
         layout = self.layout 
 
-
         row = layout.row(align=True)   
-        row.label(text="Preset Name")
-        row.label(text="Start Clipping")
-        row.label(text="End Clipping")
+        row.label(text="Preset Name", icon = 'FONTPREVIEW')
+        row.label(text="Start Clipping", icon='IMAGE_ZDEPTH')
+        row.label(text="End Clipping", icon='IMAGE_ZDEPTH')
 
         row = layout.row(align=True)
-        row.prop(self, "preset_1_label", text="")
+        # row.prop(self, "preset_1_label", text="")
+        row.label(text="Viewport Default")
         row.prop(self,"preset_1_start_clipping", text="")
         row.prop(self,"preset_1_end_clipping", text="")
 
         row = layout.row(align=True)
-        row.prop(self, "preset_2_label", text="")
+        # row.prop(self, "preset_2_label", text="")
+        row.label(text="Camera Default")
         row.prop(self,"preset_2_start_clipping", text="")
         row.prop(self,"preset_2_end_clipping", text="")
 
         row = layout.row(align=True)
-        row.prop(self, "preset_3_label", text="")
+        # row.prop(self, "preset_3_label", text="")
+        row.label(text="Product Design")
         row.prop(self,"preset_3_start_clipping", text="")
         row.prop(self,"preset_3_end_clipping", text="")
 
         row = layout.row(align=True)
-        row.prop(self, "preset_4_label", text="")
+        # row.prop(self, "preset_4_label", text="")
+        row.label(text="Landscape")
         row.prop(self,"preset_4_start_clipping", text="")
         row.prop(self,"preset_4_end_clipping", text="")
 
         row = layout.row(align=True)
-        row.prop(self, "preset_5_label", text="")
+        # row.prop(self, "preset_5_label", text="")
+        row.label(text="Worlds")
         row.prop(self,"preset_5_start_clipping", text="")
         row.prop(self,"preset_5_end_clipping", text="")
 
         row = layout.row(align=True)
-        row.prop(self, "preset_6_label", text="")
+        # row.prop(self, "preset_6_label", text="")
+        row.label(text="Custom")
         row.prop(self,"preset_6_start_clipping", text="")
         row.prop(self,"preset_6_end_clipping", text="")
 

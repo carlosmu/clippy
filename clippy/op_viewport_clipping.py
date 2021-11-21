@@ -11,11 +11,11 @@ class Clippy_OT_viewport_clipping(bpy.types.Operator):
     bl_label = "Clipping Presets"
     bl_options = {'REGISTER', 'UNDO'}
 
-# Prevents operator appearing in unsupported editors
-    # @classmethod
-    # def poll(cls, context):
-    #     if (context.area.ui_type == 'VIEW_3D'):
-    #         return True
+    # Prevents operator appearing in unsupported editors
+    @classmethod
+    def poll(cls, context):
+        if (context.area.ui_type == 'VIEW_3D'):
+            return True
 
     ##############################################
     #   Playblast functionality
@@ -45,15 +45,11 @@ class Clippy_OT_viewport_clipping(bpy.types.Operator):
         return{'FINISHED'}
 
 
-
-
-
 ##############################################
 # Register/unregister classes and functions
 ##############################################
 def register():
     bpy.utils.register_class(Clippy_OT_viewport_clipping)
-
 
 def unregister():
     bpy.utils.unregister_class(Clippy_OT_viewport_clipping)
