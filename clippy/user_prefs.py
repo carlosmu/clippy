@@ -159,6 +159,7 @@ class Clippy_Preferences(bpy.types.AddonPreferences):
         precision = 3
     )
     
+    # Preferences UI
     def draw(self, context):
         layout = self.layout 
 

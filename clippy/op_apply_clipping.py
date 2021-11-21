@@ -13,11 +13,12 @@ class Clippy_OT_apply_clipping(bpy.types.Operator):
             return True
 
     ##############################################
-    #   Playblast functionality
+    #   Apply Clipping functionality
     ##############################################
     def execute(self, context):
         prefs = context.preferences.addons[__package__].preferences
 
+        # If editor is 3dView
         if context.area.ui_type == 'VIEW_3D':
             if context.scene.clippy_viewport_options == 'PRESET_1':
                 context.space_data.clip_start = prefs.preset_1_start_clipping
@@ -51,6 +52,7 @@ class Clippy_OT_apply_clipping(bpy.types.Operator):
                 context.space_data.clip_start = prefs.preset_8_start_clipping
                 context.space_data.clip_end = prefs.preset_8_end_clipping
 
+        # If editor is Properties
         elif context.area.ui_type == 'PROPERTIES':
             if context.scene.clippy_camera_options == 'PRESET_1':
                 context.object.data.clip_start = prefs.preset_1_start_clipping
@@ -88,7 +90,7 @@ class Clippy_OT_apply_clipping(bpy.types.Operator):
 
 
 ##############################################
-# Register/unregister classes and functions
+# REGISTER/UNREGISTER
 ##############################################
 def register():
     bpy.utils.register_class(Clippy_OT_apply_clipping)

@@ -5,10 +5,10 @@ from .user_prefs import Clippy_Preferences
 ### Register preferences for use in dropdown items
 bpy.utils.register_class(Clippy_Preferences)
 
-def clippy_view_button(self, context):
+def clippy_ui(self, context):
     layout = self.layout
     box = layout.box()
-    box.label(text="Clipping Presets", icon='IMAGE_ZDEPTH')
+    box.label(text="Clipping Presets", icon='IMAGE_PLANE')
 
     row = box.row(align=True)
     if context.area.ui_type == 'VIEW_3D':
@@ -35,12 +35,12 @@ items = [
 ### Unregister Preferences for use in main functionality
 bpy.utils.unregister_class(Clippy_Preferences)
 
-##############################################
-## Register/unregister classes and functions
-##############################################
+####################################
+# REGISTER/UNREGISTER
+####################################
 def register():
-    bpy.types.VIEW3D_PT_view3d_properties.prepend(clippy_view_button)
-    bpy.types.DATA_PT_lens.prepend(clippy_view_button)
+    bpy.types.VIEW3D_PT_view3d_properties.prepend(clippy_ui)
+    bpy.types.DATA_PT_lens.prepend(clippy_ui)
     
     bpy.types.Scene.clippy_viewport_options = bpy.props.EnumProperty(
         name = "Clip presets",
@@ -56,8 +56,8 @@ def register():
     )
         
 def unregister():
-    bpy.types.VIEW3D_PT_view3d_properties.remove(clippy_view_button) 
-    bpy.types.DATA_PT_lens.remove(clippy_view_button) 
+    bpy.types.VIEW3D_PT_view3d_properties.remove(clippy_ui)
+    bpy.types.DATA_PT_lens.remove(clippy_ui)
 
     del bpy.types.Scene.clippy_viewport_options
     del bpy.types.Scene.clippy_camera_options
