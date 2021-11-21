@@ -17,13 +17,13 @@
 
 from . import btn_clipping_presets
 from . import user_prefs
-from . import op_viewport_clipping
+from . import op_apply_clipping
 
 bl_info = {
     "name": "Clippy",
     "author": "Carlos Mu <carlos.damian.munoz@gmail.com>, Gez <twitter.com/gez>",
     "blender": (2, 83, 0),
-    "version": (0, 2, 0),
+    "version": (0, 3, 0),
     "category": "Camera",
     "location": "3D Viewport Sidebar > View, and Camera Properties",
     "description": "Clipping presets for Blender",
@@ -36,11 +36,11 @@ bl_info = {
 # REGISTER/UNREGISTER
 ####################################
 def register():
-    op_viewport_clipping.register()
+    op_apply_clipping.register()
     btn_clipping_presets.register()
     user_prefs.register()
 
 def unregister():
-    op_viewport_clipping.unregister()
+    op_apply_clipping.unregister()
     btn_clipping_presets.unregister()
     user_prefs.unregister()
