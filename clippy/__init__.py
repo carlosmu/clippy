@@ -23,13 +23,13 @@ bl_info = {
     "name": "Clippy",
     "author": "Carlos Mu <carlos.damian.munoz@gmail.com>, Gez <twitter.com/gez>",
     "blender": (2, 83, 0),
-    "version": (0, 6, 0),
+    "version": (0, 7, 0),
     "category": "Camera",
     "location": "View Tab of 3D-View Sidebar / Camera Properties",
-    "description": "Clipping presets for Blender",
+    "description": "Clipping presets for viewport and camera",
     "warning": "",
-    "doc_url": "",
-    "tracker_url": "",
+    "doc_url": "https://blendermarket.com/products/clippy",
+    "tracker_url": "https://blendermarket.com/creators/carlosmu",
 }
 
 ####################################
