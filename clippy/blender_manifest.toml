@@ -1,0 +1,16 @@
+# Dont change this, is not referred to addon version
+schema_version = "1.0.0"
+# Dont change this, is not referred to addon version
+
+
+id = "clippy"
+version = "0.7.1"
+name = "Clippy"
+tagline = "Clipping presets for viewport and camera"
+maintainer = "carlosmu | carlos.damian.munoz@gmail.com"
+type = "add-on"
+tags = ["Camera", "3D View", "User Interface"]
+website = "https://blendermarket.com/products/clippy"
+
+blender_version_min = "2.83.0"
+license = ["SPDX:GPL-3.0-or-later",]
