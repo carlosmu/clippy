@@ -4,7 +4,7 @@ schema_version = "1.0.0"
 
 
 id = "clippy"
-version = "0.7.1"
+version = "1.0.0"
 name = "Clippy"
 tagline = "Clipping presets for viewport and camera"
 maintainer = "carlosmu | carlos.damian.munoz@gmail.com"
